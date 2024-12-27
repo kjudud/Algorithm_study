@@ -7,7 +7,7 @@ for _ in range(int(input())):
     if tag[1] == 'enter':
         result_set.add(tag[0])
     else:
-        result_set.remove(tag[0])
+        result_set.discard(tag[0])
 
 for name in sorted(result_set, reverse=True):
     print(name)
