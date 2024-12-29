@@ -2,13 +2,18 @@ from itertools import combinations
 
 sum_result = []
 result = []
-T_n = [int(i*(i+1)/2) for i in range(1, 46)]*3
+T_n = [int(i*(i+1)/2) for i in range(1, 46)]
 
-for i in combinations(T_n, 3):
-    sum_result.append(sum(i))
+def check(l):
+    for i in range(45):
+        for j in range(45):
+            for k in range(45):
+                if (T_n[i] + T_n[j] + T_n[k]) == l:
+                    return 1
+    return 0
 
 for _ in range(int(input())):
-    result.append(1 if int(input()) in sum_result else 0)
+    result.append(check(int(input())))
 
 for i in result:
     print(i)
